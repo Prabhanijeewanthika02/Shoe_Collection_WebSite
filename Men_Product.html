@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Bright Walk</title>
+	<link rel="stylesheet" href="./src/css/men_product_css/men_product_style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+</head>
+<style>
+	body {
+		margin: 0;
+		padding: 0;
+		font-family: sans-serif;
+		background-color: #f4f4f4;
+	}
+
+	header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 1rem 2rem;
+		background-color: white;
+	}
+
+	.logo {
+		width: 100px;
+	}
+
+	.logo img {
+		width: 100%;
+	}
+
+	nav ul {
+		display: flex;
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+
+	nav li {
+		margin-right: 1rem;
+	}
+
+	nav li a {
+		text-decoration: none;
+		color: #333;
+		font-weight: bold;
+	}
+
+	nav li a:hover {
+		color: #000;
+	}
+
+	nav li.search {
+		display: flex;
+		align-items: center;
+	}
+
+	nav li.search input[type="text"] {
+		padding: 5px 10px;
+		border: 1px solid #ccc;
+		border-radius: 3px;
+		font-size: 14px;
+	}
+
+	nav li.search button {
+		padding: 5px 10px;
+		background-color: gray;
+		border: none;
+		cursor: pointer;
+		font-size: 14px;
+		line-height: 1;
+	}
+
+	.nav-right ul {
+		display: flex;
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+
+	.nav-right li {
+		margin-left: 1rem;
+	}
+
+	.nav-right li a {
+		text-decoration: none;
+		color: #333;
+		font-weight: bold;
+	}
+
+	.nav-right li a:hover {
+		color: #000;
+	}
+
+	.product-container {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+
+	.product-card {
+		display: block;
+		width: 300px;
+		margin: 30px;
+		border: 1px solid #ccc;
+		border-radius: 5px;
+		overflow: hidden;
+		box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+		transition: transform 0.3s ease;
+		text-align: center;
+	}
+
+	.product-card:hover {
+		transform: translateY(-5px);
+	}
+
+	.product-image {
+		height: 250px;
+		background-size: cover;
+		background-position: center;
+		transition: transform 0.3s ease;
+	}
+
+	.casual {
+		background-image: url('./src/img/22049/bcimg.jpeg');
+	}
+
+	.formal {
+		background-image: url('./src/img/22049/bfimg.png');
+	}
+
+	.sports {
+		background-image: url('./src/img/22049/bsimg.jpeg');
+	}
+
+	.abc {
+		text-decoration: none;
+	}
+
+	.product-info {
+		padding: 15px;
+	}
+
+	h2 {
+		margin: 0;
+		font-size: 18px;
+	}
+
+	p {
+		margin: 5px 0;
+		font-size: 16px;
+	}
+
+	.cen {
+		justify-content: space-between;
+	}
+
+	.product-card.abc {
+		display: inline;
+	}
+
+	h1 {
+		text-align: center;
+	}
+
+	.containers {
+		max-width: 900px;
+		margin: 5px auto;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
+
+	.product-card2 {
+		background-color: #fff;
+		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+		margin-bottom: 15px;
+		width: calc(33.33% - 20px);
+		padding: 5px;
+	}
+
+	.product-card2 img {
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+		width: 70%;
+	}
+
+	.product-info2 {
+		padding-top: 10px;
+	}
+
+	.product-name2 {
+		margin: 0;
+		font-size: 18px;
+		color: #333;
+		text-align: center;
+	}
+
+	.product-price2 {
+		margin: 5px 0 0;
+		font-size: 16px;
+		color: #666;
+		text-align: center;
+	}
+
+	.container img {
+		width: 100%;
+		height: 180vh;
+		object-fit: cover;
+	}
+
+	.x {
+		width: 100%;
+		height: 50vh;
+		object-fit: cover;
+	}
+
+	.container p {
+		width: 100%;
+		margin: 0;
+	}
+
+	section {
+		width: 100%;
+	}
+
+	section.bg-gray-100 {
+		padding: 4rem 0;
+	}
+
+	.phead {
+		font-size: 45px;
+	}
+
+	.pp {
+		width: 100%;
+	}
+
+	.ts {
+		border-spacing: 60px;
+	}
+
+	.about-section1-content {
+		margin: 0px auto;
+		padding: 30px 0px 30px 0px;
+		width: 90%;
+		height: auto;
+		background: transparent;
+		position: relative;
+		text-align: left;
+	}
+
+	.footer {
+		background-color: #333;
+		color: #fff;
+		padding: 20px;
+		text-align: center;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-around;
+		text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+	}
+
+	.footer .column {
+		flex: 1;
+		margin: 10px;
+	}
+
+	.footer a {
+		color: #fff;
+		text-decoration: none;
+	}
+
+	.footer a:hover {
+		text-decoration: underline;
+	}
+
+	.footer .social-icons {
+		margin-top: 20px;
+	}
+
+	.footer .social-icons a {
+		color: #fff;
+		font-size: 20px;
+		margin: 0 10px;
+	}
+
+	.footer form {
+		margin-top: 20px;
+	}
+
+	.footer form input,
+	.footer form button {
+		margin-bottom: 10px;
+	}
+
+	.related-links {
+		list-style-type: none;
+		padding: 2px;
+		margin: 2;
+		text-decoration: none;
+	}
+
+	.related-links li {
+		margin-right: 10px;
+	}
+
+	iframe {
+		border: 0;
+	}
+
+	.centerf {
+		text-align: center;
+	}
+
+	.footer-disclaimer {
+		margin-top: 20px;
+		text-align: center;
+		width: 100%;
+		color: #fff;
+	}
+</style>
+
+<body>
+	<header>
+		<div class="logo">
+			<a href="./index.html">
+				<img src="./src/img/22050/logo.png" alt="Bright Walk - The Art of Walking">
+		</div>
+		<nav>
+			<ul>
+				<li><a href="./index.html">HOME</a></li>
+				<li><a href="./men_products.html">MEN</a></li>
+				<li><a href="./ladies.html">WOMEN</a></li>
+				<li><a href="./kids_main_page.html">KIDS</a></li>
+				<li><a href="./brands.html">BRANDS</a></li>
+				<li><a href="./about_us.html">ABOUT US</a></li>
+				<li class="search">
+					<input type="text" placeholder="Search">
+					<button type="submit"><i class="fas fa-search"></i></button>
+				</li>
+			</ul>
+		</nav>
+		<div class="nav-right">
+			<ul>
+				<li><a href="./favourites.html"><i class="far fa-heart"></i> Favorite</a></li>
+				<li><a href="./sign_up.html"><i class="fas fa-user-plus"></i> Sign Up</a></li>
+				<li><a href="./sign_in.html"><i class="fas fa-user"></i> Sign In</a></li>
+				<li><a href="./add_to_cart.html"><i class="fas fa-shopping-cart"></i> Add to Cart</a></li>
+			</ul>
+		</div>
+	</header>
+
+	<h1>SHOP BY CATEGORY</h1>
+	<br>
+	<div class="product-container">
+
+		<div class="product-card abc">
+			<a href="./casualshoe.html" class="abc">
+				<div class="product-image casual"></div>
+				<div class="product-info">
+					<h2>Casual Shoes</h2>
+				</div>
+			</a>
+		</div>
+
+		<div class="product-card abc">
+			<a href="./formalshoes.html" class="abc">
+				<div class="product-image formal"></div>
+				<div class="product-info">
+					<h2>Formal Shoes</h2>
+				</div>
+			</a>
+		</div>
+
+		<div class="product-card abc">
+			<a href="./sportsshoe.html" class="abc">
+				<div class="product-image sports"></div>
+				<div class="product-info">
+					<h2>Sports Shoes</h2>
+				</div>
+			</a>
+		</div>
+	</div>
+	<h1>NEW ARRIVALS</h1>
+	<br>
+	<div class="containers">
+		<div class="product-card2">
+			<img src="./src/img/22049/S1.jpg" alt="Shoe 1">
+			<div class="product-info2">
+				<h3 class="product-name2">ROYAL WINGS GENTS SLIDE SANDAL TAN</h3>
+				<p class="product-price2">LKR.8,000.000</p>
+			</div>
+		</div>
+		<div class="product-card2">
+			<img src="./src/img/22049/img3.jpg" alt="Shoe 1">
+			<div class="product-info2">
+				<h3 class="product-name2">WHITE COVER SHOES</h3>
+				<p class="product-price2">LKR.9,500.00</p>
+			</div>
+		</div>
+		<div class="product-card2">
+			<img src="./src/img/22049/img4.jpg" alt="Shoe 1">
+			<div class="product-info2">
+				<h3 class="product-name2">WESTEL LETHER SHOES</h3>
+				<p class="product-price2">LKR. 12,000.00</p>
+			</div>
+		</div>
+		<div class="product-card2">
+			<img src="./src/img/22049/p1.jpg" alt="Shoe 1">
+			<div class="product-info2">
+				<h3 class="product-name2">PUMA MEN SPORTS LACING SHOES PUMA WHITE</h3>
+				<p class="product-price2">LKR.10,000.00</p>
+			</div>
+		</div>
+		<div class="product-card2">
+			<img src="./src/img/22049/a1.jpg" alt="Shoe 1">
+			<div class="product-info2">
+				<h3 class="product-name2">ADIDAS MEN CASUAL LACING SHOES NAVY</h3>
+				<p class="product-price2">LKR 16,500.00</p>
+			</div>
+		</div>
+		<div class="product-card2">
+			<img src="./src/img/22049/m1.jpg" alt="Shoe 1">
+			<div class="product-info2">
+				<h3 class="product-name2">RED TAPE MENS BOOT TEAK</h3>
+				<p class="product-price2">LKR 14,024.15</p>
+			</div>
+		</div>
+	</div>
+	<br>
+
+	<footer class="footer">
+		<div class="column">
+			<h4>Address:</h4>
+			<p>Bright Walk Shoe Collection</p>
+			<p>D Perera Rajapaksa Mawatha</p>
+			<p>Dehiwala</p>
+			<p>Colombo 7 </p>
+			<p>Sri Lanka</p>
+		</div>
+		<div class="column">
+			<h4>Contact:</h4>
+			<p>Tele :+94 (0) 91 223 4599</p>
+			<p>Tele :+94 (0) 91 223 4597</p>
+			<p>Email: info@brightwalkshoe.com</p>
+		</div>
+		<div class="column">
+			<h4>Related Links:</h4>
+			<ul class="related-links">
+				<li><a href="./index.html">HOME</a></li>
+				<li><a href="./men_products.html">MEN</a></li>
+				<li><a href="./ladies.html">WOMEN</a></li>
+				<li><a href="./kids_main_page.html">KIDS</a></li>
+				<li><a href="./brands.html">BRANDS</a></li>
+				<li><a href="./about_us.html">ABOUT US</a></li>
+			</ul>
+		</div>
+		<div class="column">
+			<h4>Follow Us:</h4>
+			<div class="social-icons">
+				<a href="https://web.facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+				<a href="#" target="_blank"><i class="fab fa-whatsapp"></i></a>
+				<a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+				<a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+
+			</div>
+		</div>
+		<div class="column">
+			<h4>Subscribe to Our Newsletter:</h4>
+			<form action="#" method="post">
+				<input type="text" name="name" placeholder="Your Name"><br>
+				<input type="email" name="email" placeholder="Your Email"><br>
+				<button type="submit">Submit</button>
+			</form>
+		</div>
+		<div class="column">
+			<h4>Location:</h4>
+
+			<iframe
+				src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7928.099746274695!2d79.852158!3d6.9157095!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x8fb6d6291b46b703!2sWorld%20Trade%20Center%20Colombo!5e0!3m2!1sen!2sus!4v1649419678582!5m2!1sen!2sus"
+				width="300" height="150" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+		</div>
+		<div class="footer-disclaimer">
+			<p>All Rights Reserved © <br> Designed & Powered By 17 Batch</p>
+		</div>
+	</footer>
+</body>
+
+</html>
